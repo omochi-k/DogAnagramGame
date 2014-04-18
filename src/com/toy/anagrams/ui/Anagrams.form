@@ -7,7 +7,7 @@
         <Menu class="javax.swing.JMenu" name="fileMenu">
           <Properties>
             <Property name="mnemonic" type="int" value="70"/>
-            <Property name="text" type="java.lang.String" value="File"/>
+            <Property name="text" type="java.lang.String" value="&#x30d5;&#x30a1;&#x30a4;&#x30eb;"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="aboutMenuItem">
@@ -80,7 +80,7 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="scrambledLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Scrambled Word:"/>
+            <Property name="text" type="java.lang.String" value="&#x30a2;&#x30ca;&#x30b0;&#x30e9;&#x30e0;&#x3055;&#x308c;&#x305f;&#x6587;&#x5b57;&#x5217;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -105,7 +105,7 @@
             <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
               <ComponentRef name="guessedWord"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Your Guess:"/>
+            <Property name="text" type="java.lang.String" value="&#x3042;&#x306a;&#x305f;&#x306e;&#x7b54;&#x3048;&#xff1a;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -145,7 +145,7 @@
             <Component class="javax.swing.JButton" name="guessButton">
               <Properties>
                 <Property name="mnemonic" type="int" value="71"/>
-                <Property name="text" type="java.lang.String" value="Guess"/>
+                <Property name="text" type="java.lang.String" value="&#x7b54;&#x3048;&#x5408;&#x308f;&#x305b;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Guess the scrambled word."/>
               </Properties>
               <Events>
@@ -160,7 +160,7 @@
             <Component class="javax.swing.JButton" name="nextTrial">
               <Properties>
                 <Property name="mnemonic" type="int" value="78"/>
-                <Property name="text" type="java.lang.String" value="New Word"/>
+                <Property name="text" type="java.lang.String" value="&#x6b21;&#x306e;&#x554f;&#x984c;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Fetch a new word."/>
               </Properties>
               <Events>
@@ -176,7 +176,7 @@
         </Container>
         <Component class="javax.swing.JLabel" name="levelLabel">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Level:"/>
+            <Property name="text" type="java.lang.String" value="&#x30ec;&#x30d9;&#x30eb;"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
