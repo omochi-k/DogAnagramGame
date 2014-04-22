@@ -29,14 +29,19 @@
 
 /* Anagram Game Application */
 
+/**
+
 package com.toy.anagrams.lib;
 
 import java.util.Arrays;
 import junit.framework.TestCase;
+* 
+*/
 
 /**
  * Test of the functionality of {@link WordLibrary}.
  */
+/*
 public class WordLibraryTest extends TestCase {
     WordLibrary wordLibrary;
 
@@ -48,11 +53,12 @@ public class WordLibraryTest extends TestCase {
         wordLibrary = WordLibrary.getDefault();
     }
     
-    
+    */
 
     /**
      * Test of {@link WordLibrary#isCorrect}.
      */
+/*
     public void testIsCorrect() {
         for (int i = 0; i < wordLibrary.getSize(); i++) {
             String clearWord = wordLibrary.getWord(i);
@@ -63,6 +69,8 @@ public class WordLibraryTest extends TestCase {
                        isAnagram(clearWord, scrambledWord));
         }
     }
+    * 
+    */
 
     /**
      * Tests whether given anagram represents the word.
@@ -70,6 +78,7 @@ public class WordLibraryTest extends TestCase {
      * @param scrambledWord Scrambled version of the word
      * @return true if the scrambledWord is correct anagram of clearWord
      */
+/*
     private boolean isAnagram(String clearWord, String scrambledWord) {
         char[] clearArray = clearWord.toCharArray();
         char[] scrambledArray = scrambledWord.toCharArray();
@@ -79,3 +88,5 @@ public class WordLibraryTest extends TestCase {
     }
 
 }
+
+*/
