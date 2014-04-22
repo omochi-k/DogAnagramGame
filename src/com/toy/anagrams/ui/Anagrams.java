@@ -37,6 +37,7 @@ import java.awt.Point;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import java.util.Random;
 
 /**
  * Main window of the Anagram Game application.
@@ -76,7 +77,34 @@ public class Anagrams extends JFrame {
     }
 
     private int wordIdx = 0;
+    private int levelaction = 0;
     private WordLibrary wordLibrary;
+    
+    
+    private String makeRandomWord(String x) {
+        this.levelaction = levelaction;
+        char[] preWords = x.toCharArray();
+        char tmp;
+        Random r = new Random();
+        int rn1;
+        int rn2;
+        int wl = x.length()/2;
+        switch(levelaction){
+            case 1: wl = wl/2;
+            case 2: wl = wl;
+            case 3: wl = (wl/2)*3;
+        }
+        for(int i=0;i<wl; i++){
+            rn1 = r.nextInt(x.length());
+            rn2 = r.nextInt(x.length());
+            tmp = preWords[rn1];
+            preWords[rn1] = preWords[rn2];
+            preWords[rn2] = tmp;
+        }
+        
+        String scrWord = String.valueOf(preWords);
+        return scrWord;
+    }
 
     /** Creates new form Anagrams */
     public Anagrams() {
@@ -84,7 +112,7 @@ public class Anagrams extends JFrame {
         
         initComponents();
         getRootPane().setDefaultButton(guessButton);
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        scrambledWord.setText(makeRandomWord(wordLibrary.getWord(wordIdx)));
         pack();
         guessedWord.requestFocusInWindow();
         // Center in the screen
@@ -93,6 +121,8 @@ public class Anagrams extends JFrame {
         setLocation(new Point((screenSize.width - frameSize.width) / 2,
                               (screenSize.height - frameSize.width) / 2));
     }
+    
+    
     
     /** This method is called from within the constructor to
      * initialize the form.
@@ -213,6 +243,11 @@ public class Anagrams extends JFrame {
         mainPanel.add(levelLabel, gridBagConstraints);
 
         selectLevel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Level 1", "Level 2", "Level 3" }));
+        selectLevel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectLevelActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -257,7 +292,7 @@ public class Anagrams extends JFrame {
         wordIdx = (wordIdx + 1) % wordLibrary.getSize();
 
         feedbackLabel.setText(" ");
-        scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        scrambledWord.setText(makeRandomWord(wordLibrary.getWord(wordIdx)));
         guessedWord.setText("");
         getRootPane().setDefaultButton(guessButton);
 
@@ -283,6 +318,11 @@ public class Anagrams extends JFrame {
     private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
         System.exit(0);
     }//GEN-LAST:event_exitForm
+
+    private void selectLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectLevelActionPerformed
+        // TODO add your handling code here:　アナグラムレベル選択
+        levelaction = 1;
+    }//GEN-LAST:event_selectLevelActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
