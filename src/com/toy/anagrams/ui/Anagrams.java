@@ -171,6 +171,11 @@ public class Anagrams extends JFrame {
 
         scrambledWord.setEditable(false);
         scrambledWord.setColumns(20);
+        scrambledWord.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                scrambledWordActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
@@ -321,8 +326,22 @@ public class Anagrams extends JFrame {
 
     private void selectLevelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectLevelActionPerformed
         // TODO add your handling code here:　アナグラムレベル選択
-        levelaction = 1;
+        selectLevel.addActionListener(selectLevel);
+        int getLevel = selectLevel.getSelectedIndex();
+        if(getLevel == 0) {
+            levelaction = 1;
+        } else if (getLevel == 1) {
+            levelaction = 2;
+        }  else {
+            levelaction = 3;
+        }
+        scrambledWord.setText(makeRandomWord(wordLibrary.getWord(wordIdx)));
+        // levelaction = 1;
     }//GEN-LAST:event_selectLevelActionPerformed
+
+    private void scrambledWordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_scrambledWordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_scrambledWordActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
